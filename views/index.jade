@@ -4,10 +4,10 @@ block content
   div(id="main")
     h1(id="my-name") McKenzie Hafkemeyer
   div(class="top-nav")
-    a(href="javascript:scrollToContent('about-container')") About
-    a(href="javascript:scrollToContent('exp-container')") Experience
-    a(href="javascript:scrollToContent('edu-container')") Education
-    a(href="javascript:scrollToContent('contact-container')") Contact
+    a(id="about-menu", href="javascript:scrollToContent('about-container')") About
+    a(id="exp-menu", href="javascript:scrollToContent('exp-container')") Experience
+    a(id="edu-menu", href="javascript:scrollToContent('edu-container')") Education
+    a(id="contact-menu", href="javascript:scrollToContent('contact-container')") Contact
   div(class="content-container", id="about-container")
     p "This is where I will write info about me"
   div(class="content-container", id="exp-container")
@@ -15,5 +15,18 @@ block content
   div(class="content-container", id="edu-container")
     p "This is where I will write info about my education"
   div(class="content-container", id="contact-container")
-    p "This is how you will contact me"
+    div(id="form-container")
+      form(id="contact", action="/contact", method="post")
+        h3 Contact
+        h4 Contact me if you'd like to chat!
+        fieldset
+          input(placeholder="Your name", name="name", type="text", tabindex="1", required)
+        fieldset
+          input(placeholder="Your Email Address", name="email", type="email", tabindex="2", required)
+        fieldset
+          textarea(placeholder="Type your Message Here....", name="message", tabindex="3", required)
+        fieldset
+          button(name="submit", type="submit", id="contact-submit", data-submit="...Sending") Submit
+  div(id="copyright")
+    p "Copyright area"
 
